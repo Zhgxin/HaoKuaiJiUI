@@ -7,7 +7,7 @@ import org.openqa.selenium.support.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+//µÇÂ½Page
 public class LoginPage extends PageBase{
 	AppConfigure config = new AppConfigure("BaseConfig.Properties");
 	

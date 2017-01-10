@@ -3,7 +3,9 @@ package Utility;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class ElementCommonActions {
 	public static boolean WaitForElementPresent(WebElement element){
@@ -24,7 +26,7 @@ public class ElementCommonActions {
 		}
 		return false;
 	  }
-	
+	//click
 	public static void click_(WebElement element)
     {
         // active js click
@@ -38,5 +40,19 @@ public class ElementCommonActions {
 			e.printStackTrace();
 		}
     }
+	// Û±Í“∆∂Ø
+//	public static void moveTo(WebElement element) throws FileNotFoundException, IOException
+//	{
+//		WebElement el = element;
+//		Actions action = new Actions(BrowserFactory.Browser());
+//		try{
+//			action.moveToElement(element).build().perform();
+//		}
+//		catch(IllegalArgumentException e){
+//			JavascriptExecutor j = (JavascriptExecutor)BrowserFactory.Browser();
+//			j.executeScript("document.getElementsByClassName('grid-pane')[0].scrollTop=1000");
+//			moveTo(el);
+//		}
+//	}
 	}
 

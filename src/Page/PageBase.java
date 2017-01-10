@@ -11,7 +11,7 @@ import Utility.*;
 
 public class PageBase {
 	protected RemoteWebDriver _webDriver = BrowserFactory.Browser();
-	
+	protected static boolean status = false;
 	public PageBase() throws IOException
 	{
 		
