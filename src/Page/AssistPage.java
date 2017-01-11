@@ -13,6 +13,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 //¸¨ÖúºËËãPage
 public class AssistPage extends PageBase{
+	//¸¨ÖúºËËã
+	@FindBy(xpath="//*[@id=\"nav_assistAccounting\"]/div[1]/h3")
+	public WebElement sv;
 	//ÏîÄ¿Ãû³Æ
 	@FindBy(xpath="//*[@id=\"nav_assistAccounting\"]/div[3]/div/div/div[2]/table/tbody/tr/td[3]/input")
 	public WebElement name;
@@ -61,6 +64,7 @@ public class AssistPage extends PageBase{
 			name.sendKeys(naMe);
 		if(ElementCommonActions.WaitForElementPresent(unIt))
 			unIt.sendKeys(n);
+		sv.click();
 		//Actions action = new Actions(_webDriver);
 	}
 	

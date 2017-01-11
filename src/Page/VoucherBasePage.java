@@ -43,7 +43,7 @@ public class VoucherBasePage extends PageBase{
 		vouCher_1_1.sendKeys(point1);
 		vouCher_1_2.click();
 		//获取科目
-		List<WebElement> trelements = _webDriver.findElementsByXPath("//*[@id=\"chanjet_form_PopListBox_1\"]/ul[2]/li");
+		List<WebElement> trelements = _webDriver.findElementsByXPath("//*[@id=\"chanjet_form_PopListBox_3\"]/ul[2]/li");
 		
 		for(int i=0;i<trelements.size();i++)
 		{
@@ -59,7 +59,7 @@ public class VoucherBasePage extends PageBase{
 		vouCher_2_1_1.click();
 		vouCher_2_1_2.sendKeys(point2);
 		vouCher_2_3_1.click();
-		List<WebElement> trelement = _webDriver.findElementsByXPath("//*[@id=\"chanjet_form_PopListBox_1\"]/ul[2]/li");
+		List<WebElement> trelement = _webDriver.findElementsByXPath("//*[@id=\"chanjet_form_PopListBox_3\"]/ul[2]/li");
 		for(int i=0;i<trelement.size();i++)
 		{
 			//System.out.print(trelements.get(i).getText());

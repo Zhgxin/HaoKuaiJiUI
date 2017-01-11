@@ -63,7 +63,7 @@ public class CreatCoursePage extends PageBase{
 			//System.out.print(assist_1.size());
 			//System.out.print(assist_1.get(0).isDisplayed());
 			//System.out.print(assist_1.get(1).isDisplayed());
-			System.out.print("there");
+			//System.out.print("there");
 			if(assist_1.get(0).isDisplayed()){
 				//µã»÷ĞÂÔö
 				assist_1.get(2).findElement(By.xpath(".//div")).click();

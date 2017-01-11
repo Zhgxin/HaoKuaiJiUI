@@ -22,6 +22,10 @@ public class PortalPage extends PageBase{
 	//消息
 	@FindBy(xpath="//*[@id=\"app/vm/Header_0\"]/div[21]/div[1]/div[2]")
 	public WebElement headTipClose;
+	
+	//首页
+	@FindBy(xpath="//*[@id=\"app/vm/Header_0\"]/div[2]/a")
+	public WebElement reopen;
 
 //******************************账套设置*************************************
 	//选择账套
@@ -210,6 +214,12 @@ public class PortalPage extends PageBase{
 		if(ElementCommonActions.WaitForElementPresent(headTipClose))
 			ElementCommonActions.click_(headTipClose);
 	}
+	
+	//返回首页
+	public void Reopen() throws InterruptedException{
+		Thread.sleep(1000);
+		reopen.click();
+	}
 //****************************设置函数**********************************
 	public void SetUp(){
 		if(ElementCommonActions.WaitForElementPresent(setup))
@@ -316,7 +326,8 @@ public class PortalPage extends PageBase{
 			assistbalance.click();
 	}
 //***************************选择账套函数*******************************
-	public void NewBooks(String name){
+	public void NewBooks(String name)throws InterruptedException{
+		Thread.sleep(1000);
 		if(ElementCommonActions.WaitForElementPresent(newBooks))
 			newBooks.click();
 		bookName.sendKeys(name);

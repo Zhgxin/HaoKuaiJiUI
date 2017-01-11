@@ -33,7 +33,6 @@ public class LedgerPage extends PageBase{
 				listcourse.get(i).click();
 			}
 		}
-
 	}
 	public void Clickcourse(){
 		course.click();

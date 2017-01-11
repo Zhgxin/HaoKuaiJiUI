@@ -43,5 +43,9 @@ public class VoucherPage extends VoucherBasePage{
 				element.get(i).click();
 		}
 	}
+	//±£´æ
+	public void sv(){
+		serveVoucher.click();
+	}
 
 }

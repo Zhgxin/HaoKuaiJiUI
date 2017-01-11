@@ -11,7 +11,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Utility.BrowserFactory;
 import Utility.ElementCommonActions;
+import Utility.Logger;
 //科目期初Page
 public class CoursePage extends PageBase{
 	
@@ -65,11 +67,8 @@ public class CoursePage extends PageBase{
 				break;
 			}
 		}
-//		ElementCommonActions.moveTo(targetTR);
 		Actions action = new Actions(_webDriver);
-//		try
-//		{
-		action.moveToElement(targetTR).build().perform();
+//		action.moveToElement(targetTR).build().perform();
 //		}
 //		catch (IllegalArgumentException e)
 //		{
@@ -78,8 +77,37 @@ public class CoursePage extends PageBase{
 //			action.moveToElement(targetTR).build().perform();
 //			System.out.print("蟑螂");
 //		}
-		WebElement newButton = _webDriver.findElement(By.xpath(String.format("//*[@id=\"app_vm_SubjectGrid_0\"]/table/tbody/tr[%d]/td[1]/div/span", index)));
-		newButton.click();
+		
+		for(int i=100;i<1000;i=i+100){
+			try{
+				//WebElement targetTR1 = null;
+				//List<WebElement> trelements1 = _webDriver.findElementsByXPath("//*[@id=\"app_vm_SubjectGrid_0\"]/table/tbody/tr/td[1]/div");
+				for(int j=0;j<trelements.size();j++){
+					if(trelements.get(j).getText().contains(num)){
+					targetTR= trelements.get(j);
+					index = j+1;
+					break;
+					}
+				}
+				action.moveToElement(targetTR).build().perform();
+				WebElement newButton = _webDriver.findElement(By.xpath(String.format("//*[@id=\"app_vm_SubjectGrid_0\"]/table/tbody/tr[%d]/td[1]/div/span", index)));
+				newButton.click();
+				break;
+			}catch(Exception e){
+				try{
+					//System.out.print(i);
+					JavascriptExecutor j = (JavascriptExecutor)BrowserFactory.Browser();
+					j.executeScript("document.getElementsByClassName('grid-pane')[0].scrollTop="+ i);
+					Thread.sleep(1000);
+					action.moveToElement(targetTR).build().perform();
+				}catch(IllegalArgumentException ee){
+					Logger.Write("发现等待异常");
+				}
+			}
+		}
+		
+//		WebElement newButton = _webDriver.findElement(By.xpath(String.format("//*[@id=\"app_vm_SubjectGrid_0\"]/table/tbody/tr[%d]/td[1]/div/span", index)));
+//		newButton.click();
 	}
 	//添加下级科目
 	public void newCourse(){

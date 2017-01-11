@@ -54,5 +54,23 @@ public class ElementCommonActions {
 //			moveTo(el);
 //		}
 //	}
+	public static void moveTo(WebElement ele,String name) throws FileNotFoundException, IOException{
+		Actions action = new Actions(BrowserFactory.Browser());
+		for(int i=0;i<4;i++){
+			try{
+				
+				ele.click();
+			}catch(Exception e){
+				try{
+					int top =+ 300;
+					JavascriptExecutor j = (JavascriptExecutor)BrowserFactory.Browser();
+					j.executeScript("document.getElementsByClassName('grid-pane')[0].scrollTop="+ top);
+				}catch(IllegalArgumentException ee){
+					Logger.Write("发现等待异常");
+				}
+			}
+		}
 	}
+	}
+
 

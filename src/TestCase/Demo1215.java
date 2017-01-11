@@ -47,11 +47,11 @@ public class Demo1215 {
 		//System.out.print(reportBase.GetCellVauleByRawNameAndColumnName("资产总计", "期末余额").getClass().getName());
 		//返回java.lang.String
 		//新增凭证
-		/*
+		
 		portalPage.NewVoucher();
 		VoucherBasePage voucherPage = new VoucherBasePage();
-		voucherPage.createVoucher("1", "1001 现金","1","1","1002 银行存款","1");
-		
+		voucherPage.createVoucher("1", "1001 库存现金","1","1","1012 其他货币资金","1");
+		/*
 		//选择账套
 		//portalPage.ChooseBooks(1);
 		//新建账套
@@ -86,7 +86,7 @@ public class Demo1215 {
 		creatCoursePage.editCourse("你好", "kg", "", "客户");
 		//coursePage.stopCourse();
 		//System.out.print(coursePage.GetCellVauleByRowNameAndColumnName("库存现金", "期初余额"));
-		*/
+		
 		//账簿——总账
 		portalPage.IntoBook();
 		portalPage.IntoAllbook();
@@ -98,6 +98,13 @@ public class Demo1215 {
 		LedgerSonPage ledgerSonPage = new LedgerSonPage();
 		ledgerSonPage.getcell("2016-01-01","凭证号");
 		ledgerSonPage.getvouher();
-		
+		*/
+		//portalPage.IntoBook();
+		//portalPage.IntoDetailbook();
+		//DetailaccountPage detailaccount = new DetailaccountPage();
+		//detailaccount.Detaildata("2016-03-01");
+		//System.out.print(detailaccount.GetCellVaule("2016-03-01", "贷方"));
+		Demo01.dome();
+		//Demo02.dome();
 	}
 }
